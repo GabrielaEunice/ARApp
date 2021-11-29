@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'pages/galeria.dart';
 import 'pages/tienda.dart';
 import 'pages/home.dart';
-import 'pages/camera_screen.dart';
-import 'package:camara_flutter/src/app.dart';
+import 'pages/camera_screen02.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: <String, WidgetBuilder>{
         "/home": (BuildContext context) => Home(),
-        "/camera_screen": (BuildContext context) => camera_screen(),
+        "/camera_screen": (BuildContext context) => CameraScreen(),
         "/galeria": (BuildContext context) => Galeria(),
         "/tienda": (BuildContext context) => Tienda(),
       },
@@ -27,5 +26,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-camera_screen() {}

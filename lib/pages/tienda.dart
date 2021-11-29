@@ -1,175 +1,227 @@
-// ignore_for_file: unnecessary_string_escapes
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectoflutter_02/pages/home.dart';
+import '../app.dart';
 
-class Tienda extends StatelessWidget {
+class ExamplesWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return MaterialApp(
-      home: Scaffold(
-          backgroundColor: const Color(0xFFEBF5E9), //color de fondo
-          appBar: AppBar(
-            title: const Text(
-              "AR APP",
-              style: TextStyle(color: Colors.black),
-            ), //Texto de titlulo
-            centerTitle: true, //centrar el titulo,
-            backgroundColor: Colors.transparent,
-            elevation: 0, //hace que no se vea el appbar
-          ),
-          body: Column(children: [
-            //Columna para las imagenes y que esten organizadas
-            buildProduct("Equal pay for equal work", "120",
-                "assets\img\Tienda\imgAR_02.png"), //sección uno de imagen
-            buildProduct("Toxic Masculinity", "120",
-                "assets\img\Tienda\imgAR_03.png"), //sección dos de imagen
-            buildProduct("Women´s Day", "120",
-                "assets\img\Tienda\imgAR_04.png"), //sección tres de imagen
-            buildProduct("Some Records", "120",
-                "assets\img\Tienda\imgAR_05.png"), //sección cuatro de imagen
-            buildProduct("Dinosaur", "120",
-                "assets\img\Tienda\imgAR_06.png"), //sección cinco de imagen
-            buildProduct("Our planet is Dying", "120",
-                "assets\img\Tienda\imgAR_08.png"), //sección seis de imagen
-            buildProduct("Gender is a Social Construct", "120",
-                "assets\img\Tienda\imgAR_09.png"), //sección siete de imagen
-          ])),
-=======
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Tienda'),
-      ),
-      backgroundColor: Colors.amber,
-      body: Container(
-        padding: EdgeInsets.all(28),
+  Widget build(BuildContext context) => ListView(
+        //crea una pantalla que pueda ser escroleable
+        padding: EdgeInsets.all(32), //margen
+        children: [
+          buildBackgroundCard(),
+          Center(child: buildIconCard()), //icono en el centro
+          Center(child: buildArbuilder()),
+          Center(child: buildArbuilders()),
+          Center(child: buildArbuilders0()),
+          Center(child: buildArbuilders01()),
+        ],
+      );
+
+  Widget buildArbuilder() {
+    final urlPlayeraAR =
+        "https://images-na.ssl-images-amazon.com/images/I/61MvAPA87lL._AC_UX466_.jpg";
+
+    return ClipRRect(
+      //tiene la propiedad de border radius
+      borderRadius: BorderRadius.circular(20), //bordes circulares
+      child: Container(
+        padding: EdgeInsets.all(12), //espacio al rededro de el widget
+        color: Color(0xFF010101), //color de fondo negro
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment:
+              CrossAxisAlignment.start, //columna pegada a la izquierda
           children: [
-            SizedBox(height: 30),
-            Text('Playeras'),
-            FlatButton(
-              //Un texto con botón
-              onPressed: () {},
-              child: Text('Clear Cart'),
+            Image.network(
+                urlPlayeraAR, //para que la imagen entre en el container
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover), //Tamaño de imagen
+            Text(
+              'Toxic Masculinity', //Texto de titulo de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //Texto en negritas
+                color: Colors.white, //texto color blanco
+                fontSize: 20, //tamaño de texto
+              ),
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              'Playera de algodon, M', //Texto descriptivo
+              style: TextStyle(
+                  color: Colors.white, fontSize: 16), //estilo de texto
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              '\$240.00', //Precio de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //texto en negritas
+                color: Colors.white, //texto de color blanco
+                fontSize: 16, //tamaño de texto
+              ),
             ),
           ],
         ),
       ),
     );
-    Expanded(
+  }
+
+  Widget buildArbuilders() {
+    final urlPlayeraAR =
+        "https://i.pinimg.com/originals/bc/dd/1d/bcdd1d32becc7406c59245c754f260cf.jpg";
+
+    return ClipRRect(
+      //tiene la propiedad de border radius
+      borderRadius: BorderRadius.circular(20), //bordes circulares
       child: Container(
-        color: Colors.green,
-        child: buildCardItems(context),
-      ),
-    );
-    SizedBox(height: 16);
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          'Total:',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        Text(
-          '\$120.00',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 32,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(height: 24),
-        Container(
-            width: double.infinity, //estira el boton todo lo ancho de la pantalla cuidando los margenes
-            height: 50,
-            child: RaisedButton(
-              color: Theme.of(context).primaryColor,
-              shape: StadiumBorder(),
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32,
-                  color: Colors.white,
-                ),
+        padding: EdgeInsets.all(12), //espacio al rededro de el widget
+        color: Color(0xFF010101), //color de fondo negro
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment:
+              CrossAxisAlignment.start, //columna pegada a la izquierda
+          children: [
+            Image.network(
+                urlPlayeraAR, //para que la imagen entre en el container
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover), //Tamaño de imagen
+            Text(
+              'Toxic Masculinity', //Texto de titulo de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //Texto en negritas
+                color: Colors.white, //texto color blanco
+                fontSize: 20, //tamaño de texto
               ),
-              onPressed: () {},
-            ))
-      ],
->>>>>>> 831fa8bd79fedccf5da268ad9dc35fa9181bcb38
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              'Playera de algodon, M', //Texto descriptivo
+              style: TextStyle(
+                  color: Colors.white, fontSize: 16), //estilo de texto
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              '\$240.00', //Precio de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //texto en negritas
+                color: Colors.white, //texto de color blanco
+                fontSize: 16, //tamaño de texto
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
-/*Widget build(BuildContext context) => Scaffold(                                          
-      backgroundColor: Color(0xFFf6f5ee),//color de fondo 
-      appBar: AppBar(
-        title: Text(
-          MyApp.title,
-          style: TextStyle(color: Colors.black),
-   ), //Texto de titlulo
-   centerTitle: true, //centrar el titulo,
-   backgroundColor: Colors.transparent,
-   elevation: 0, //hace que no se vea el appbar
-    ), 
-    );
-*/
-  Widget buildProduct(String titulo, String precio, String img) => Container(
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(
-                16))), //Los contenedores de las imagegnes con esqinas redondas
-        child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Image.asset(img), Text(titulo), Text(precio)],
-            ) //Contenido de los contenedores
+  Widget buildArbuilders0() {
+    final urlPlayeraAR =
+        "https://images-na.ssl-images-amazon.com/images/I/81klmej5j6L._AC_SX466_.jpg";
 
-<<<<<<< HEAD
-            ), //Para que las imagenes y texto tengan un margen dentro del contenedor
-      );
-}
-=======
-Widget buildCardItems(BuildContext context) {
-  return buildCardItem();
-}
-
-Widget buildCardItem() => ListTile(
-      leading: CircleAvatar(
-          backgroundImage: AssetImage('assets/img/pl.jpg')), //Widget circular
-      title: Row(
-        children: [
-          Text(
-            '1x',
-            style: TextStyle(color: Colors.white),
-          ),
-          SizedBox(width: 10),
-          Expanded(
-            // para que el texto no se corte
-            child: Text(
-              'Gender is a social construct, AR',
+    return ClipRRect(
+      //tiene la propiedad de border radius
+      borderRadius: BorderRadius.circular(20), //bordes circulares
+      child: Container(
+        padding: EdgeInsets.all(12), //espacio al rededro de el widget
+        color: Color(0xFF010101), //color de fondo negro
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment:
+              CrossAxisAlignment.start, //columna pegada a la izquierda
+          children: [
+            Image.network(
+                urlPlayeraAR, //para que la imagen entre en el container
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover), //Tamaño de imagen
+            Text(
+              'Toxic Masculinity', //Texto de titulo de la playera
               style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+                //estilo de texto
+                fontWeight: FontWeight.bold, //Texto en negritas
+                color: Colors.white, //texto color blanco
+                fontSize: 20, //tamaño de texto
               ),
             ),
-          )
-        ],
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              'Playera de algodon, M', //Texto descriptivo
+              style: TextStyle(
+                  color: Colors.white, fontSize: 16), //estilo de texto
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              '\$240.00', //Precio de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //texto en negritas
+                color: Colors.white, //texto de color blanco
+                fontSize: 16, //tamaño de texto
+              ),
+            ),
+          ],
+        ),
       ),
     );
+  }
 
-/*Widget imageSection() {
-  return Center(
-    child: Image.asset(
-      'assets/img/pl.jpg',
-      width: 600,
-      height: 400,
-      fit: BoxFit.cover,
-    ),
-  );
-}*/
+  Widget buildArbuilders01() {
+    final urlPlayeraAR =
+        "https://cdn.shopify.com/s/files/1/1944/3961/products/Gnarly-Glitch-Tree-Black-T-Shirt-_273426_600x.jpg?v=1567281032";
 
-//MIN 18:00
->>>>>>> 831fa8bd79fedccf5da268ad9dc35fa9181bcb38
+    return ClipRRect(
+      //tiene la propiedad de border radius
+      borderRadius: BorderRadius.circular(20), //bordes circulares
+      child: Container(
+        padding: EdgeInsets.all(12), //espacio al rededro de el widget
+        color: Color(0xFF010101), //color de fondo negro
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment:
+              CrossAxisAlignment.start, //columna pegada a la izquierda
+          children: [
+            Image.network(
+                urlPlayeraAR, //para que la imagen entre en el container
+                width: 200,
+                height: 200,
+                fit: BoxFit.cover), //Tamaño de imagen
+            Text(
+              'Toxic Masculinity', //Texto de titulo de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //Texto en negritas
+                color: Colors.white, //texto color blanco
+                fontSize: 20, //tamaño de texto
+              ),
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              'Playera de algodon, M', //Texto descriptivo
+              style: TextStyle(
+                  color: Colors.white, fontSize: 16), //estilo de texto
+            ),
+            const SizedBox(height: 8), //separacion de texto
+            Text(
+              '\$240.00', //Precio de la playera
+              style: TextStyle(
+                //estilo de texto
+                fontWeight: FontWeight.bold, //texto en negritas
+                color: Colors.white, //texto de color blanco
+                fontSize: 16, //tamaño de texto
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  buildBackgroundCard() {}
+
+  buildIconCard() {}
+}

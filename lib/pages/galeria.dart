@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:proyectoflutter_02/pages/home.dart';
-
 import '../app.dart';
 
 class Galeria extends StatelessWidget {
