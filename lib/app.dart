@@ -28,9 +28,9 @@ Widget drawerMenu(BuildContext context) {
           },
         ),
         ListTile(
-          title: const Text('Ar'),
+          title: const Text('CameraScreen'),
           onTap: () {
-            Navigator.pushNamed(context, '/ar');
+            Navigator.pushNamed(context, '/camera_screen');
           },
         ),
         ListTile(

@@ -7,15 +7,16 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Home'), //titulo de la pagina
       ),
-      body: columnContent(),
+      body: columnContent(), //columna para menu
       drawer: drawerMenu(context),
     );
   }
 }
 
 Widget columnContent() {
+  //contenido de la columna
   return Column(
     children: [
       imageSection(),
@@ -26,10 +27,11 @@ Widget columnContent() {
 }
 
 Widget imageSection() {
+  //seccion de imagen
   return Center(
     child: Image.asset(
-      'assets/img/playeraAR_01.jpg',
-      width: 600,
+      'assets/img/playeraAR_01.jpg', //imagen
+      width: 600, //dimencion de imagen
       height: 400,
       fit: BoxFit.cover,
     ),
@@ -37,44 +39,50 @@ Widget imageSection() {
 }
 
 Widget textoBody() {
+  //texto central
   return Container(
-    padding: EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 50),
-    alignment: Alignment.center,
+    padding: EdgeInsets.only(
+        top: 30, left: 20, right: 20, bottom: 50), //margen de texto
+    alignment: Alignment.center, //centrar texto
     child: Text(
-      'VR App reinventa el uso de la moda, nuestro objetivo es elevar el arte de artistas nuevos',
+      'VR App reinventa el uso de la moda, nuestro objetivo es elevar el arte de artistas nuevos', //texto
       softWrap: true,
     ),
   );
 }
 
 Widget buttonSection() {
+  //boton
   Color color = Colors.redAccent;
 
   return Row(
+    //iconos
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      _bottonsRow(color, Icons.call, 'LLAMAR'),
-      _bottonsRow(color, Icons.near_me, 'RUTA'),
-      _bottonsRow(color, Icons.share, 'COMPARTIR'),
+      _bottonsRow(color, Icons.call, 'LLAMAR'), //icono llamada
+      _bottonsRow(color, Icons.near_me, 'RUTA'), //icono rut
+      _bottonsRow(color, Icons.share, 'COMPARTIR'), //icono compartir
     ],
   );
 }
 
 Widget _bottonsRow(Color color, IconData icon, String label) {
-  Color color = Colors.redAccent;
+  //ajustes de botones
+  Color color = Colors.redAccent; //color de botones
   return Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min, //espacio que ocupa en la pantalla
+    mainAxisAlignment: MainAxisAlignment.center, //centrar
     children: [
-      Icon(icon, color: color),
+      Icon(icon, color: color), //icono
       Container(
         margin: const EdgeInsets.only(top: 8),
         child: Text(
           label,
           style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-            color: color,
+            //estilo de texto
+            fontSize: 12, //tamaño de texto
+            fontWeight: FontWeight.w400, //font
+            color: color, //color de texto
           ),
         ),
       ),
@@ -83,13 +91,17 @@ Widget _bottonsRow(Color color, IconData icon, String label) {
 }
 
 Widget titleSection() {
-  final _textStyle =
-      TextStyle(fontWeight: FontWeight.w600, color: Colors.white, fontSize: 24);
+  const _textStyle = TextStyle(
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+      fontSize: 24); //ajustos de texto
 
   return Container(
-    padding: EdgeInsets.all(32),
-    alignment: Alignment.center,
+    //contenedor de texto
+    padding: const EdgeInsets.all(32), //margen del contenedor
+    alignment: Alignment.center, //centrar
     decoration: BoxDecoration(
+      //diseño de contenedor
       color: Colors.red.shade500,
     ),
     child: Row(
@@ -101,13 +113,17 @@ Widget titleSection() {
             children: [
               /*2*/
               Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Text('Oeschinen Lake Campground', style: _textStyle),
+                padding:
+                    const EdgeInsets.only(bottom: 8), //rmargen de contenedor
+                child: const Text(
+                    'Realidad aumentada en tus manos', //texto dentro del contenedor
+                    style: _textStyle),
               ),
               Text(
-                'Kandersteg, Switzerland',
+                'Galeria de diseños / Ar / Tienda',
                 style: TextStyle(
-                  color: Colors.grey[500],
+                  //estilo de letra
+                  color: Colors.grey[500], //color
                 ),
               ),
             ],
@@ -115,6 +131,7 @@ Widget titleSection() {
         ),
         /*3*/
         Icon(
+          //icono
           Icons.star,
           color: Colors.red[500],
         ),

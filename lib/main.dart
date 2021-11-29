@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
 import 'pages/galeria.dart';
 import 'pages/tienda.dart';
 import 'pages/home.dart';
-import 'pages/ar.dart';
+import 'pages/camera_screen.dart';
+import 'package:camara_flutter/src/app.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  static final String title = 'TIENDA - PLAYERAS';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: <String, WidgetBuilder>{
         "/home": (BuildContext context) => Home(),
-        "/ar": (BuildContext context) => Ar(),
+        "/camera_screen": (BuildContext context) => camera_screen(),
         "/galeria": (BuildContext context) => Galeria(),
         "/tienda": (BuildContext context) => Tienda(),
       },
@@ -28,3 +27,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+camera_screen() {}
