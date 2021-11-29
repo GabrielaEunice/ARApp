@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyectoflutter_02/pages/home.dart';
 import '../app.dart';
 
-class ExamplesWidget extends StatelessWidget {
+class Tienda extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ListView(
         //crea una pantalla que pueda ser escroleable
@@ -38,7 +38,7 @@ class ExamplesWidget extends StatelessWidget {
                 height: 200,
                 fit: BoxFit.cover), //Tamaño de imagen
             Text(
-              'Toxic Masculinity', //Texto de titulo de la playera
+              'Wood', //Texto de titulo de la playera
               style: TextStyle(
                 //estilo de texto
                 fontWeight: FontWeight.bold, //Texto en negritas
@@ -89,7 +89,7 @@ class ExamplesWidget extends StatelessWidget {
                 height: 200,
                 fit: BoxFit.cover), //Tamaño de imagen
             Text(
-              'Toxic Masculinity', //Texto de titulo de la playera
+              'MakingTCut', //Texto de titulo de la playera
               style: TextStyle(
                 //estilo de texto
                 fontWeight: FontWeight.bold, //Texto en negritas
@@ -140,7 +140,7 @@ class ExamplesWidget extends StatelessWidget {
                 height: 200,
                 fit: BoxFit.cover), //Tamaño de imagen
             Text(
-              'Toxic Masculinity', //Texto de titulo de la playera
+              'DeerJ', //Texto de titulo de la playera
               style: TextStyle(
                 //estilo de texto
                 fontWeight: FontWeight.bold, //Texto en negritas
